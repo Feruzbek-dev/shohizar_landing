@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doktor Shohizar — Zamonaviy stomatologiya</title>
+  <meta name="description" content="Doktor Shohizar stomatologiya klinikasi: implantatsiya, breket, oqartirish, davolash va bolalar stomatologiyasi. Og'riqsiz va zamonaviy davolash.">
+  <meta name="theme-color" content="#800080">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23800080'/%3E%3Cpath d='M20 14c-6 0-10 5-10 12 0 6 3 9 4 15 1 7 2 13 6 13 3 0 4-5 5-10 1-4 3-6 7-6s6 2 7 6c1 5 2 10 5 10 4 0 5-6 6-13 1-6 4-9 4-15 0-7-4-12-10-12-5 0-7 3-12 3s-7-3-12-3z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo" aria-label="Doktor Shohizar">
+        <span class="logo__icon">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 12c-6 0-10 5-10 12 0 6 3 9 4 15 1 7 2 15 6 15 3 0 4-6 5-11 1-4 3-6 7-6s6 2 7 6c1 5 2 11 5 11 4 0 5-8 6-15 1-6 4-9 4-15 0-7-4-12-10-12-5 0-7 3-12 3s-7-3-12-3z"/></svg>
+        </span>
+        <span class="logo__text">Doktor <b>Shohizar</b></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#services">Xizmatlar</a>
+        <a href="#about">Shifokor haqida</a>
+        <a href="#prices">Narxlar</a>
+        <a href="#reviews">Fikrlar</a>
+        <a href="#faq">Savollar</a>
+        <a href="#contact">Aloqa</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+998901234567" class="header__phone">+998 90 123 45 67</a>
+        <a href="#appointment" class="btn btn--primary btn--sm">Qabulga yozilish</a>
+        <button class="burger" id="burger" aria-label="Menyu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <span class="badge"><span class="dot"></span> Bugun qabul ochiq</span>
+          <h1>Sog'lom va chiroyli <span class="grad">tabassum</span> — biz bilan</h1>
+          <p class="hero__lead">Doktor Shohizar stomatologiya klinikasi — zamonaviy uskunalar, og'riqsiz davolash va har bir bemorga individual yondashuv.</p>
+          <div class="hero__cta">
+            <a href="#appointment" class="btn btn--primary">Bepul konsultatsiya
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#services" class="btn btn--ghost">Xizmatlarni ko'rish</a>
+          </div>
+          <div class="hero__stats">
+            <div><b data-count="12">0</b><span>yillik tajriba</span></div>
+            <div><b data-count="8500" data-suffix="+">0</b><span>mamnun bemor</span></div>
+            <div><b data-count="98" data-suffix="%">0</b><span>tavsiya qiladi</span></div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__card hero__card--main">
+            <svg class="hero__tooth" viewBox="0 0 200 220" aria-hidden="true">
+              <defs>
+                <linearGradient id="toothGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffffff"/>
+                  <stop offset="1" stop-color="#f1dcf1"/>
+                </linearGradient>
+              </defs>
+              <path d="M62 18c-22 0-38 18-38 44 0 22 11 34 15 56 4 26 8 84 26 84 13 0 16-22 19-40 3-16 8-24 16-24s13 8 16 24c3 18 6 40 19 40 18 0 22-58 26-84 4-22 15-34 15-56 0-26-16-44-38-44-18 0-26 11-38 11S80 18 62 18z" fill="url(#toothGrad)" stroke="#fff" stroke-width="3"/>
+              <path d="M56 48c-8 4-12 12-12 22" stroke="#fff" stroke-width="8" stroke-linecap="round" fill="none" opacity=".9"/>
+            </svg>
+            <span class="sparkle sparkle--1">✦</span>
+            <span class="sparkle sparkle--2">✦</span>
+            <span class="sparkle sparkle--3">✦</span>
+          </div>
+          <div class="float-card float-card--a">
+            <span class="float-card__icon">★</span>
+            <div><b>4.9 / 5</b><small>1 200+ baho</small></div>
+          </div>
+          <div class="float-card float-card--b">
+            <span class="float-card__icon float-card__icon--green">✓</span>
+            <div><b>Og'riqsiz davolash</b><small>Zamonaviy anesteziya</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Trust strip ===== -->
+    <section class="strip">
+      <div class="container strip__inner">
+        <div class="strip__item"><span>🦷</span> Raqamli rentgen</div>
+        <div class="strip__item"><span>🔬</span> Mikroskop ostida davolash</div>
+        <div class="strip__item"><span>🛡️</span> Sterilizatsiya 100%</div>
+        <div class="strip__item"><span>📅</span> Kafolat 5 yilgacha</div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Xizmatlar</span>
+          <h2>Tish salomatligi uchun to'liq xizmatlar</h2>
+          <p>Profilaktikadan murakkab jarrohlikgacha — barchasi bir joyda.</p>
+        </div>
+
+        <div class="services">
+          <article class="service reveal">
+            <div class="service__icon"><svg viewBox="0 0 24 24"><path d="M12 2v6M9 5h6M8 10h8l-1 12h-6z"/></svg></div>
+            <h3>Implantatsiya</h3>
+            <p>Yo'qolgan tishlarni premium implantlar bilan tiklash. Umrbod xizmat qiladi.</p>
+            <a href="#appointment" class="service__link">Batafsil →</a>
+          </article>
+          <article class="service reveal">
+            <div class="service__icon"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="6" rx="2"/><path d="M7 9v6M12 9v6M17 9v6M2 12h20"/></svg></div>
+            <h3>Breket va elaynerlar</h3>
+            <p>Tishlarni tekislash: metall, keramik breketlar va ko'rinmas elaynerlar.</p>
+            <a href="#appointment" class="service__link">Batafsil →</a>
+          </article>
+          <article class="service reveal">
+            <div class="service__icon"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></div>
+            <h3>Oqartirish</h3>
+            <p>Professional oqartirish — bir seansda 8 tongacha oqroq tabassum.</p>
+            <a href="#appointment" class="service__link">Batafsil →</a>
+          </article>
+          <article class="service reveal">
+            <div class="service__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+            <h3>Karies davolash</h3>
+            <p>Og'riqsiz davolash va zamonaviy fotopolimer plombalar.</p>
+            <a href="#appointment" class="service__link">Batafsil →</a>
+          </article>
+          <article class="service reveal">
+            <div class="service__icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></div>
+            <h3>Protezlash</h3>
+            <p>Sirkoniy va E-max qoplamalar, vinirlar — tabiiy ko'rinish.</p>
+            <a href="#appointment" class="service__link">Batafsil →</a>
+          </article>
+          <article class="service reveal">
+            <div class="service__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div>
+            <h3>Bolalar stomatologiyasi</h3>
+            <p>Bolalar uchun do'stona muhit va qo'rquvsiz davolash.</p>
+            <a href="#appointment" class="service__link">Batafsil →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="section section--tint" id="about">
+      <div class="container about">
+        <div class="about__visual reveal">
+          <div class="about__photo">
+            <svg viewBox="0 0 300 360" aria-hidden="true">
+              <defs>
+                <linearGradient id="aboutGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#a64ca6"/>
+                  <stop offset="1" stop-color="#4d004d"/>
+                </linearGradient>
+              </defs>
+              <rect width="300" height="360" fill="url(#aboutGrad)"/>
+              <circle cx="150" cy="130" r="58" fill="#f6e6f6"/>
+              <path d="M40 360c0-70 50-120 110-120s110 50 110 120z" fill="#fff"/>
+              <path d="M150 240l-22 40 22 80 22-80z" fill="#e8c9e8"/>
+              <path d="M112 262c-6 30 4 52 20 58M188 262c6 30-4 52-20 58" stroke="#800080" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <circle cx="168" cy="322" r="9" fill="#800080"/>
+            </svg>
+          </div>
+          <div class="about__badge">
+            <b>12+</b>
+            <span>yil tajriba</span>
+          </div>
+        </div>
+
+        <div class="about__content reveal">
+          <span class="eyebrow">Shifokor haqida</span>
+          <h2>Doktor Shohizar</h2>
+          <p class="about__role">Stomatolog-terapevt, ortoped va implantolog</p>
+          <p>12 yildan ortiq tajribaga ega shifokor. Xalqaro kurslar va seminarlarda muntazam malaka oshiradi. Asosiy maqsad — har bir bemorga og'riqsiz, sifatli va uzoq muddatli natija berish.</p>
+          <ul class="checklist">
+            <li>Xalqaro implantologiya sertifikatlari</li>
+            <li>3 000+ muvaffaqiyatli implantatsiya</li>
+            <li>Estetik stomatologiya bo'yicha mutaxassis</li>
+            <li>Bemorga individual davolash rejasi</li>
+          </ul>
+          <a href="#appointment" class="btn btn--primary">Shifokorga yozilish</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Why us ===== -->
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Afzalliklar</span>
+          <h2>Nega aynan bizni tanlashadi?</h2>
+        </div>
+        <div class="features">
+          <div class="feature reveal"><span class="feature__num">01</span><h3>Og'riqsiz</h3><p>Zamonaviy anesteziya — davolash jarayonida hech qanday noqulaylik yo'q.</p></div>
+          <div class="feature reveal"><span class="feature__num">02</span><h3>Zamonaviy uskunalar</h3><p>3D tomografiya, raqamli skaner va Yevropa uskunalari.</p></div>
+          <div class="feature reveal"><span class="feature__num">03</span><h3>Shaffof narxlar</h3><p>Davolash rejasi va narx oldindan kelishiladi — yashirin to'lovlar yo'q.</p></div>
+          <div class="feature reveal"><span class="feature__num">04</span><h3>Kafolat</h3><p>Barcha ishlarga rasmiy kafolat — 5 yilgacha.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Prices ===== -->
+    <section class="section section--dark" id="prices">
+      <div class="container">
+        <div class="section__head section__head--light reveal">
+          <span class="eyebrow eyebrow--light">Narxlar</span>
+          <h2>Mashhur xizmatlar narxi</h2>
+          <p>Aniq narx konsultatsiyadan so'ng belgilanadi.</p>
+        </div>
+        <div class="prices">
+          <div class="price reveal">
+            <h3>Konsultatsiya</h3>
+            <div class="price__value">Bepul</div>
+            <ul>
+              <li>Ko'rik va tashxis</li>
+              <li>Davolash rejasi</li>
+              <li>Narx hisob-kitobi</li>
+            </ul>
+            <a href="#appointment" class="btn btn--light">Yozilish</a>
+          </div>
+          <div class="price price--featured reveal">
+            <span class="price__tag">Eng mashhur</span>
+            <h3>Oqartirish</h3>
+            <div class="price__value">1 200 000 <small>so'm</small></div>
+            <ul>
+              <li>Professional gigiyena</li>
+              <li>Oqartirish seansi</li>
+              <li>Ftorlash</li>
+            </ul>
+            <a href="#appointment" class="btn btn--primary">Yozilish</a>
+          </div>
+          <div class="price reveal">
+            <h3>Implant</h3>
+            <div class="price__value"><small>dan</small> 4 500 000 <small>so'm</small></div>
+            <ul>
+              <li>3D tomografiya</li>
+              <li>Premium implant</li>
+              <li>Umrbod kafolat</li>
+            </ul>
+            <a href="#appointment" class="btn btn--light">Yozilish</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Reviews ===== -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Fikrlar</span>
+          <h2>Bemorlarimiz nima deyishadi</h2>
+        </div>
+        <div class="reviews">
+          <figure class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <blockquote>Tish og'rig'idan juda qo'rqardim, lekin hech narsani sezmadim. Doktor juda e'tiborli va tushuntirib beradi.</blockquote>
+            <figcaption><span class="avatar">M</span><div><b>Madina</b><small>Karies davolash</small></div></figcaption>
+          </figure>
+          <figure class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <blockquote>Ikkita implant qo'ydirdim — natija a'lo. Narxlar oldindan aytildi, hech qanday qo'shimcha to'lov bo'lmadi.</blockquote>
+            <figcaption><span class="avatar">B</span><div><b>Bobur</b><small>Implantatsiya</small></div></figcaption>
+          </figure>
+          <figure class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <blockquote>Qizimga breket qo'yildi, bir yarim yilda tishlari tekis bo'ldi. Klinika toza va zamonaviy.</blockquote>
+            <figcaption><span class="avatar">D</span><div><b>Dilnoza</b><small>Breket</small></div></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--tint" id="faq">
+      <div class="container faq-wrap">
+        <div class="section__head section__head--left reveal">
+          <span class="eyebrow">Savollar</span>
+          <h2>Ko'p beriladigan savollar</h2>
+          <p>Javob topmadingizmi? Bizga qo'ng'iroq qiling — maslahat bepul.</p>
+          <a href="tel:+998901234567" class="btn btn--ghost">Qo'ng'iroq qilish</a>
+        </div>
+        <div class="faq reveal">
+          <details open>
+            <summary>Davolash og'riqlimi?</summary>
+            <p>Yo'q. Biz zamonaviy anesteziya vositalaridan foydalanamiz, shuning uchun davolash jarayoni og'riqsiz o'tadi.</p>
+          </details>
+          <details>
+            <summary>Implantatsiya qancha vaqt oladi?</summary>
+            <p>Implant o'rnatish 30–60 daqiqa davom etadi. To'liq tiklanish odatda 3–4 oy ichida yakunlanadi.</p>
+          </details>
+          <details>
+            <summary>Bo'lib to'lash imkoniyati bormi?</summary>
+            <p>Ha, katta hajmdagi davolash uchun foizsiz bo'lib to'lash imkoniyati mavjud.</p>
+          </details>
+          <details>
+            <summary>Bolalarni necha yoshdan qabul qilasiz?</summary>
+            <p>Bolalarni 3 yoshdan boshlab qabul qilamiz. Birinchi tashrif — o'yin tarzidagi tanishuv.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Appointment ===== -->
+    <section class="section" id="appointment">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="cta__text">
+            <span class="eyebrow eyebrow--light">Qabulga yozilish</span>
+            <h2>Tabassumingizni bugun o'zgartiring</h2>
+            <p>Formani to'ldiring — administratorimiz 15 daqiqa ichida siz bilan bog'lanadi.</p>
+            <ul class="cta__list">
+              <li>✓ Bepul konsultatsiya</li>
+              <li>✓ Qulay vaqtni tanlash</li>
+              <li>✓ Navbatsiz qabul</li>
+            </ul>
+          </div>
+          <form class="form" id="form" novalidate>
+            <label>
+              <span>Ismingiz</span>
+              <input type="text" name="name" placeholder="Ismingizni kiriting" required>
+            </label>
+            <label>
+              <span>Telefon raqam</span>
+              <input type="tel" name="phone" placeholder="+998 __ ___ __ __" required>
+            </label>
+            <label>
+              <span>Xizmat</span>
+              <select name="service">
+                <option>Konsultatsiya</option>
+                <option>Implantatsiya</option>
+                <option>Breket / elayner</option>
+                <option>Oqartirish</option>
+                <option>Karies davolash</option>
+                <option>Protezlash</option>
+                <option>Bolalar stomatologiyasi</option>
+              </select>
+            </label>
+            <button type="submit" class="btn btn--primary btn--block">Yuborish</button>
+            <p class="form__note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section section--tint" id="contact">
+      <div class="container contact">
+        <div class="contact__info reveal">
+          <span class="eyebrow">Aloqa</span>
+          <h2>Bizga tashrif buyuring</h2>
+          <div class="contact__item"><span class="contact__icon">📍</span><div><b>Manzil</b><p>Toshkent sh., Yunusobod tumani</p></div></div>
+          <div class="contact__item"><span class="contact__icon">📞</span><div><b>Telefon</b><p><a href="tel:+998901234567">+998 90 123 45 67</a></p></div></div>
+          <div class="contact__item"><span class="contact__icon">🕘</span><div><b>Ish vaqti</b><p>Du–Sh: 09:00 – 20:00, Yakshanba: dam olish</p></div></div>
+          <div class="socials">
+            <a href="#" aria-label="Telegram">Telegram</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+        <div class="contact__map reveal">
+          <iframe title="Xarita" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=69.26%2C41.34%2C69.32%2C41.38&amp;layer=mapnik"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="logo logo--light">
+        <span class="logo__icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 12c-6 0-10 5-10 12 0 6 3 9 4 15 1 7 2 15 6 15 3 0 4-6 5-11 1-4 3-6 7-6s6 2 7 6c1 5 2 11 5 11 4 0 5-8 6-15 1-6 4-9 4-15 0-7-4-12-10-12-5 0-7 3-12 3s-7-3-12-3z"/></svg></span>
+        <span class="logo__text">Doktor <b>Shohizar</b></span>
+      </a>
+      <p>© <span id="year"></span> Doktor Shohizar. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <a href="#appointment" class="fab" aria-label="Qabulga yozilish">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
