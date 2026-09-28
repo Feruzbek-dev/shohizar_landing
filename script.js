@@ -96,7 +96,8 @@
   // Form
   const form = document.getElementById('form');
   const note = document.getElementById('formNote');
-  form.addEventListener('submit', (e) => {
+  const submitBtn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = form.elements.name;
     const digits = phone.value.replace(/\D/g, '');
@@ -110,10 +111,32 @@
       note.classList.add('is-err');
       return;
     }
-    // TODO: arizani Telegram bot yoki backendga yuborish
-    note.textContent = "Rahmat! Tez orada siz bilan bog'lanamiz.";
-    note.classList.add('is-ok');
-    form.reset();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Yuborilmoqda...';
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.value.trim(),
+          phone: phone.value,
+          service: form.elements.service.value,
+          website: form.elements.website.value,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || res.status);
+      note.textContent = "Rahmat! Tez orada siz bilan bog'lanamiz.";
+      note.classList.add('is-ok');
+      form.reset();
+    } catch (err) {
+      note.innerHTML = "Xatolik yuz berdi. Iltimos, qo'ng'iroq qiling: <a href=\"tel:+998901234567\">+998 90 123 45 67</a>";
+      note.classList.add('is-err');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Yuborish';
+    }
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();

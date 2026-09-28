@@ -236,6 +236,9 @@ p { margin: 0 0 1em; }
 .form input, .form select { font: inherit; padding: 14px 16px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--primary-50); color: var(--ink); outline: none; transition: border-color .2s, box-shadow .2s, background .2s; width: 100%; }
 .form input:focus, .form select:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(128,0,128,.12); }
 .form input.is-invalid { border-color: #e11d48; }
+.form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.btn:disabled { opacity: .7; cursor: wait; transform: none; }
+.form__note a { text-decoration: underline; }
 .form__note { margin: 0; font-size: .9rem; font-weight: 600; min-height: 1.2em; text-align: center; }
 .form__note.is-ok { color: #16a34a; }
 .form__note.is-err { color: #e11d48; }
