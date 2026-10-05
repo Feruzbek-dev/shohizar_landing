@@ -386,7 +386,7 @@ p { margin: 0 0 1em; }
   .price--featured { transform: none; }
   .about { gap: 48px; }
   .about__visual { max-width: 420px; margin: 0 auto; }
-  .cta { padding: 40px 28px; }
+  .cta { padding: 48px 32px; }
   .section { padding: 80px 0; }
 }
 
@@ -408,7 +408,7 @@ p { margin: 0 0 1em; }
   .about__badge { right: 8px; }
   .strip__inner { justify-content: flex-start; }
   .strip__item { flex: 1 1 45%; font-size: .9rem; }
-  .cta { padding: 32px 18px; border-radius: 28px; }
+  .cta { padding: 36px 24px; border-radius: 28px; }
   .form { padding: 22px; }
 }
 
