@@ -7,20 +7,23 @@
   // Header shadow + floating button on scroll
   const onScroll = () => {
     const y = window.scrollY;
-    header.classList.toggle('is-scrolled', y > 20);
-    fab.classList.toggle('is-visible', y > 600);
+    if (header) header.classList.toggle('is-scrolled', y > 20);
+    if (fab) fab.classList.toggle('is-visible', y > 600);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
   // Mobile menu
   const setMenu = (open) => {
+    if (!nav || !burger) return;
     nav.classList.toggle('is-open', open);
     burger.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', String(open));
   };
-  burger.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
-  nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  if (burger && nav) {
+    burger.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
+    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  }
 
   // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
@@ -42,7 +45,7 @@
   }
 
   // Active nav link
-  const links = [...nav.querySelectorAll('a')];
+  const links = nav ? [...nav.querySelectorAll('a')].filter((a) => a.getAttribute('href').startsWith('#')) : [];
   const sections = links.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   if ('IntersectionObserver' in window) {
     const spy = new IntersectionObserver((entries) => {
@@ -84,6 +87,7 @@
 
   // Phone mask: +998 XX XXX XX XX
   const phone = document.querySelector('input[name="phone"]');
+  if (phone) {
   phone.addEventListener('focus', () => { if (!phone.value) phone.value = '+998 '; });
   phone.addEventListener('input', () => {
     let d = phone.value.replace(/\D/g, '');
@@ -92,12 +96,13 @@
     const p = [d.slice(0, 3), d.slice(3, 5), d.slice(5, 8), d.slice(8, 10), d.slice(10, 12)].filter(Boolean);
     phone.value = '+' + p.join(' ');
   });
+  }
 
   // Form
   const form = document.getElementById('form');
-  const note = document.getElementById('formNote');
-  const submitBtn = form.querySelector('button[type="submit"]');
-  form.addEventListener('submit', async (e) => {
+  const note = form && document.getElementById('formNote');
+  const submitBtn = form && form.querySelector('button[type="submit"]');
+  if (form) form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = form.elements.name;
     const digits = phone.value.replace(/\D/g, '');
@@ -131,7 +136,7 @@
       note.classList.add('is-ok');
       form.reset();
     } catch (err) {
-      note.innerHTML = "Xatolik yuz berdi. Iltimos, qo'ng'iroq qiling: <a href=\"tel:+998901234567\">+998 90 123 45 67</a>";
+      note.innerHTML = "Xatolik yuz berdi. Iltimos, qo'ng'iroq qiling: <a href=\"tel:+998770665055\">+998 77 066 50 55</a>";
       note.classList.add('is-err');
     } finally {
       submitBtn.disabled = false;
@@ -139,5 +144,13 @@
     }
   });
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Boshqa sahifadan kelgan ?service=... ni forma tanloviga qo'yamiz
+  const wanted = new URLSearchParams(location.search).get('service');
+  if (form && wanted) {
+    const opt = [...form.elements.service.options].find((o) => o.value === wanted);
+    if (opt) form.elements.service.value = wanted;
+  }
 })();

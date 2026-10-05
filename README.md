@@ -7,7 +7,7 @@ Tish shifokori Doktor Shohizar uchun zamonaviy, moslashuvchan (responsive) landi
 - Bo'limlar: bosh ekran, xizmatlar, shifokor haqida, afzalliklar, narxlar, fikrlar, savollar, qabulga yozilish formasi, aloqa
 
 ## Almashtirilishi kerak bo'lgan ma'lumotlar
-- Telefon raqam (`+998 90 123 45 67`), manzil, ish vaqti, Telegram/Instagram havolalari — `index.html`
+- Telefon raqam (`+998 77 066 50 55`), manzil, ish vaqti, Telegram/Instagram havolalari — `index.html`
 - Narxlar, tajriba yillari, statistika
 - Shifokor rasmi (hozir SVG illyustratsiya)
 

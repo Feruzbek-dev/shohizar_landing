@@ -10,7 +10,7 @@ const SERVICES = [
   'Oqartirish',
   'Karies davolash',
   'Protezlash',
-  'Bolalar stomatologiyasi',
+  'Tish kanallarini davolash',
 ];
 
 const escapeHtml = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
