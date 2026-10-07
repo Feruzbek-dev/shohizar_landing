@@ -1,7 +1,7 @@
 // Vercel serverless funksiya: qabul formasidan kelgan arizani Telegram botga yuboradi.
 // Kerakli muhit o'zgaruvchilari (Vercel → Settings → Environment Variables):
 //   TELEGRAM_BOT_TOKEN — @BotFather bergan token
-//   TELEGRAM_CHAT_ID   — arizalar boradigan chat/guruh ID si
+//   TELEGRAM_CHAT_ID   — arizalar boradigan chat/guruh ID si (bir nechta bo'lsa, vergul bilan)
 
 const SERVICES = [
   'Konsultatsiya',
@@ -54,15 +54,22 @@ module.exports = async (req, res) => {
     `🕘 <b>Vaqt:</b> ${time}`,
   ].join('\n');
 
+  // TELEGRAM_CHAT_ID bir nechta bo'lishi mumkin: vergul bilan ajratiladi (123,456,-100789)
+  const chatIds = chatId.split(',').map((s) => s.trim()).filter(Boolean);
+
   try {
-    const tg = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML', disable_web_page_preview: true }),
-    });
-    const data = await tg.json();
-    if (!data.ok) {
-      console.error('Telegram xatosi:', data.description);
+    const results = await Promise.all(chatIds.map(async (id) => {
+      const tg = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: id, text, parse_mode: 'HTML', disable_web_page_preview: true }),
+      });
+      const data = await tg.json();
+      if (!data.ok) console.error(`Telegram xatosi (chat ${id}):`, data.description);
+      return data.ok;
+    }));
+    // Kamida bitta chatga yetib borgan bo'lsa — muvaffaqiyat
+    if (!results.some(Boolean)) {
       return res.status(502).json({ ok: false, error: 'Telegram error' });
     }
     return res.status(200).json({ ok: true });
