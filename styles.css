@@ -412,6 +412,13 @@ p { margin: 0 0 1em; }
   .form { padding: 22px; }
 }
 
+/* ===== Motion (motion.js) ===== */
+.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 100; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--primary-400), var(--primary), #c0269e); pointer-events: none; }
+.word, .review__stars .star { display: inline-block; will-change: transform, opacity; }
+.has-motion .faq details { overflow: hidden; }
+.service::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity .35s; background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.22), transparent 45%); }
+.service:hover::after { opacity: 1; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }

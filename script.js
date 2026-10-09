@@ -25,24 +25,30 @@
     nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
   }
 
-  // Reveal on scroll
+  // Reveal on scroll — asosan motion.js bajaradi, bu esa zaxira variant
   const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-in');
-          io.unobserve(e.target);
-        }
+  const fallbackReveal = () => {
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach((el, i) => {
+        el.style.opacity = '';
+        el.style.transitionDelay = `${(i % 3) * 80}ms`;
+        io.observe(el);
       });
-    }, { threshold: 0.12 });
-    reveals.forEach((el, i) => {
-      el.style.transitionDelay = `${(i % 3) * 80}ms`;
-      io.observe(el);
-    });
-  } else {
-    reveals.forEach((el) => el.classList.add('is-in'));
-  }
+    } else {
+      reveals.forEach((el) => el.classList.add('is-in'));
+    }
+  };
+  const reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) fallbackReveal();
+  else import('./motion.js').catch(fallbackReveal);
 
   // Active nav link
   const links = nav ? [...nav.querySelectorAll('a')].filter((a) => a.getAttribute('href').startsWith('#')) : [];
